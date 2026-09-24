@@ -466,3 +466,43 @@ section h2 {
 .chat-input-area button:hover {
     background: var(--accent-hover);
 }
+/* Chat Box Otimizado para Desktop e Mobile */
+.chat-box {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 380px;
+    height: 500px;
+    background: #12161f;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    flex-direction: column;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+.chat-box.active {
+    display: flex;
+}
+
+/* Media Query para Telemóveis (Adaptação perfeita ao teclado virtual) */
+@media (max-width: 480px) {
+    .chat-box {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        height: 100dvh !important; /* Ajusta-se dinamicamente quando o teclado abre */
+        border-radius: 0;
+        border: none;
+        z-index: 2000;
+    }
+    
+    .chat-widget {
+        bottom: 15px;
+        right: 15px;
+    }
+}
