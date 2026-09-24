@@ -1,0 +1,136 @@
+import os
+import time
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+from typing import List, Optional
+from google import genai
+from google.genai.errors import ServerError, APIError
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
+
+# 1. Carregar chave de API (.env ou variável de ambiente)
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    raise ValueError("GEMINI_API_KEY não foi configurada no ficheiro .env")
+
+# Inicialização do cliente Gemini SDK oficial
+client = genai.Client(api_key=api_key)
+
+# 2. Inicialização do Banco Vetorial (ChromaDB)
+CHROMA_PATH = "./chroma_db"
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+if os.path.exists(CHROMA_PATH):
+    vector_db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embeddings)
+else:
+    vector_db = None
+
+# 3. Inicialização do FastAPI
+app = FastAPI(title="API Assistente RAG - Rafael Kottwitz")
+
+# Configuração de CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# 4. Modelos de Dados
+class Message(BaseModel):
+    role: str
+    content: str
+
+class ChatPayload(BaseModel):
+    pergunta: str
+    historico: Optional[List[Message]] = []
+
+def formatar_historico(historico: List[Message]) -> str:
+    if not historico:
+        return "Nenhum histórico anterior."
+    
+    ultimas_mensagens = historico[-4:]
+    linhas = []
+    for msg in ultimas_mensagens:
+        papel = "Cliente" if msg.role.lower() == "user" else "Assistente"
+        linhas.append(f"{papel}: {msg.content}")
+    return "\n".join(linhas)
+
+# 5. Endpoint Principal com Streaming
+@app.post("/chat")
+async def chat_endpoint(payload: ChatPayload):
+    query = payload.pergunta.strip()
+    if not query:
+        raise HTTPException(status_code=400, detail="A pergunta não pode estar vazia.")
+
+    historico_str = formatar_historico(payload.historico)
+    
+    # Recupera os 2 fragmentos mais relevantes do ChromaDB
+    contexto = ""
+    if vector_db:
+        docs = vector_db.similarity_search(query, k=2)
+        contexto = "\n\n".join([d.page_content for d in docs])
+
+    # Prompt Consultivo com Escopo Ajustado
+    prompt = f"""Você é o assistente virtual consultivo do desenvolvedor Rafael Batista Kottwitz.
+Sua função é qualificar potenciais clientes, tirando dúvidas e recomendando soluções em desenvolvimento de software.
+
+Escopo de Serviços Atendidos:
+- Landing Pages e Sites Institucionais.
+- Aplicativos móveis SIMPLES (apenas para Android, não desenvolve para iOS).
+- E-commerces e Sistemas Corporativos PEQUENOS.
+- Sistemas web relacionais com banco de dados (ex: PostgreSQL) e Automações/APIs.
+
+Diretrizes Estritas de Atendimento:
+1. RESTRIÇÃO DE ESCOPO: O Rafael atua de forma autônoma. NÃO desenvolve para iOS (iPhone/iPad) nem projetos/sistemas de grande porte ou de altíssima complexidade.
+2. Se o cliente solicitar aplicativos para iOS ou projetos gigantescos/complexos, recuse educadamente explicando as limitações de escopo e sugira o contato pelo WhatsApp: (47) 98825-8610.
+3. Responda APENAS o estritamente necessário (máximo 2 a 3 frases por resposta).
+4. Para dúvidas de serviços dentro do escopo (ex: app Android simples, pequeno e-commerce, sistema com banco de dados), explique brevemente e TERMINE com uma pergunta para entender a necessidade do cliente.
+5. Mantenha o tom de conversa humano, consultivo e direto.
+
+Base de Conhecimento:
+{contexto}
+
+Histórico da Conversa:
+{historico_str}
+
+Pergunta do Cliente: {query}
+"""
+
+    def stream_generator():
+        try:
+            # Chamada de streaming usando genai.Client
+            response = client.models.generate_content_stream(
+                model="gemini-3.5-flash-lite",
+                contents=prompt,
+            )
+            for chunk in response:
+                if chunk.text:
+                    yield chunk.text
+        except ServerError:
+            yield "\n\n⚠️ *Serviço temporariamente indisponível. Tente novamente em instantes ou fale no WhatsApp: (47) 98825-8610.*"
+        except APIError as e:
+            if "429" in str(e):
+                yield "\n\n⚠️ *Atingimos o limite temporário de requisições. Aguarde alguns segundos ou mande mensagem no WhatsApp: (47) 98825-8610.*"
+            else:
+                yield f"\n\n⚠️ *Erro na API do Gemini. Fale diretamente no WhatsApp: (47) 98825-8610.*"
+        except Exception as e:
+            yield f"\n\n⚠️ *Erro ao processar a resposta. Contato via WhatsApp: (47) 98825-8610.*"
+
+    return StreamingResponse(stream_generator(), media_type="text/plain")
+
+# 6. Healthcheck
+@app.get("/health")
+def health_check():
+    return {
+        "status": "online",
+        "vector_db": vector_db is not None,
+        "gemini_configured": bool(api_key),
+        "model": "gemini-3.5-flash-lite"
+    }

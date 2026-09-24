@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Kottwitz | Desenvolvedor Software</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">&lt;RafaelKottwitz /&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato" class="btn-nav">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">Desenvolvedor Full Stack & Mobile</span>
+                <h1>Transformando ideias em software de alto impacto.</h1>
+                <p>Especialista em Landing Pages de alta conversão, Apps Android, E-commerces e Sistemas Web com bancos de dados relacionais.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/5547988258610" target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Fazer Orçamento
+                    </a>
+                    <button class="btn-secondary" onclick="toggleChat()">
+                        <i class="fas fa-robot"></i> Falar com Assistente IA
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <h2>Sobre Mim</h2>
+            <div class="sobre-grid">
+                <div class="sobre-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Desenvolvimento Direto</h3>
+                    <p>Atendimento autônomo, focado em entregas ágeis, código limpo e sem a burocracia de grandes agências.</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Arquitetura Sólida</h3>
+                    <p>Experiência com Python, FastAPI, C#, PostgreSQL e integrações modernas com Inteligência Artificial.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="servicos">
+            <h2>Serviços Especializados</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Landing Pages</h3>
+                    <p>Páginas otimizadas para conversão, SEO e integração com tráfego pago ou e-mail marketing.</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-android"></i>
+                    <h3>Apps Android</h3>
+                    <p>Aplicativos focados na plataforma Android, sob medida para a necessidade do seu negócio.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-commerces & Lojas</h3>
+                    <p>Soluções de venda online com checkout simples e gestão direta de produtos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-server"></i>
+                    <h3>Sistemas Web & APIs</h3>
+                    <p>Sistemas relacionais com bancos de dados (PostgreSQL/SQL) e automações personalizadas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>Projetos Recentes</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-info">
+                        <h3>Assistente RAG IA</h3>
+                        <p>Bot consultivo integrado com FastAPI, ChromaDB e modelo Gemini para atendimento 24/7.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-info">
+                        <h3>Sistemas de Gestão</h3>
+                        <p>Aplicações web para controle de estoque e cadastros com modelagem relacional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="chat-widget">
+        <button class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+        </button>
+
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>Assistente Virtual</strong>
+                        <small>IA de Atendimento</small>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="toggleChat()">&times;</button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Olá! Sou o assistente virtual do Rafael. Como posso te ajudar com seu projeto hoje?
+                </div>
+            </div>
+
+            <div class="chat-quick-tags">
+                <button onclick="sendQuickMessage('Quanto custa uma landing page?')">📄 Preço Landing Page</button>
+                <button onclick="sendQuickMessage('Você faz app para Android?')">📱 App Android</button>
+            </div>
+
+            <form class="chat-input-area" id="chatForm" onsubmit="handleSendMessage(event)">
+                <input type="text" id="userInput" placeholder="Digite sua mensagem..." autocomplete="off">
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
