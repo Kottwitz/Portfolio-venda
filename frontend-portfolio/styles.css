@@ -1,11 +1,11 @@
 :root {
-    --bg-color: #0d0f12;
-    --card-bg: #161a22;
+    --bg-color: #080a0f;
+    --card-bg: rgba(22, 26, 34, 0.75); /* Efeito translúcido para glassmorphism */
     --accent-color: #00ff66;
     --accent-hover: #00cc52;
     --text-color: #e6edf3;
     --text-secondary: #8b949e;
-    --border-color: #30363d;
+    --border-color: rgba(48, 54, 61, 0.6);
 }
 
 * {
@@ -19,11 +19,13 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
+/* Header fixo com efeito vidro */
 .header {
-    background: rgba(22, 26, 34, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(13, 15, 18, 0.85);
+    backdrop-filter: blur(12px);
     position: fixed;
     top: 0;
     width: 100%;
@@ -44,6 +46,7 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--accent-color);
+    letter-spacing: 0.5px;
 }
 
 .nav-links {
@@ -57,6 +60,7 @@ body {
     color: var(--text-color);
     text-decoration: none;
     transition: 0.3s;
+    font-size: 0.95rem;
 }
 
 .nav-links a:hover {
@@ -66,154 +70,258 @@ body {
 .btn-nav {
     border: 1px solid var(--accent-color);
     padding: 0.4rem 1rem;
-    border-radius: 4px;
+    border-radius: 6px;
+    background: rgba(0, 255, 102, 0.05);
 }
 
+/* Hero Section com Imagem de Fundo Profissional e Overlay Escuro */
 .hero {
-    min-height: 80vh;
+    position: relative;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 8rem 2rem 4rem;
     text-align: center;
+    /* Imagem de fundo abstrata/tecnológica de alta qualidade otimizada */
+    background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente escuro para garantir legibilidade perfeita sem poluir */
+    background: linear-gradient(135deg, rgba(8, 10, 15, 0.95) 0%, rgba(13, 15, 18, 0.85) 100%);
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
 }
 
 .badge {
     background: rgba(0, 255, 102, 0.1);
     color: var(--accent-color);
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.85rem;
-    border: 1px solid var(--accent-color);
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    font-weight: 500;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 1.5rem 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 .hero p {
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-btns {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .btn-primary, .btn-secondary {
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-weight: bold;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: 0.3s;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
     background: var(--accent-color);
     color: #000;
     border: none;
+    box-shadow: 0 4px 20px rgba(0, 255, 102, 0.25);
 }
 
 .btn-primary:hover {
     background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 255, 102, 0.4);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: rgba(22, 26, 34, 0.6);
+    backdrop-filter: blur(5px);
     color: var(--text-color);
     border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
     border-color: var(--accent-color);
+    background: rgba(22, 26, 34, 0.9);
+    transform: translateY(-2px);
 }
 
 section {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
 }
 
 section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 700;
 }
 
+/* Grids com Glassmorphism */
 .cards-grid, .sobre-grid, .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
 .card, .sobre-card, .portfolio-item {
     background: var(--card-bg);
+    backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
-    padding: 2rem;
-    border-radius: 8px;
-    transition: 0.3s;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-.card:hover, .sobre-card:hover {
+.card:hover, .sobre-card:hover, .portfolio-item:hover {
     border-color: var(--accent-color);
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .card i, .sobre-card i {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
-/* Chat Widget */
+/* Secção de Projetos em Destaque Renovada */
+.portfolio-section {
+    background: linear-gradient(180deg, var(--bg-color) 0%, #0c1017 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    max-width: 100%;
+    padding: 6rem 2rem;
+}
+
+.portfolio-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3.5rem;
+    font-size: 1.1rem;
+}
+
+.project-card {
+    background: rgba(22, 26, 34, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 3rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 40px rgba(0, 255, 102, 0.15);
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.project-info p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    background: rgba(0, 255, 102, 0.08);
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+}
+
+/* Chat Widget Modernizado */
 .chat-widget {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     z-index: 1000;
 }
 
 .chat-toggle-btn {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background: var(--accent-color);
     border: none;
     color: #000;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 255, 102, 0.3);
-    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(0, 255, 102, 0.4);
+    transition: all 0.3s ease;
 }
 
 .chat-toggle-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0, 255, 102, 0.6);
 }
 
 .chat-box {
     display: none;
     position: absolute;
-    bottom: 75px;
+    bottom: 80px;
     right: 0;
-    width: 360px;
-    height: 480px;
-    background: var(--card-bg);
+    width: 380px;
+    height: 500px;
+    background: #12161f;
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 16px;
     flex-direction: column;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
     overflow: hidden;
 }
 
@@ -222,8 +330,8 @@ section h2 {
 }
 
 .chat-header {
-    background: #1c2128;
-    padding: 1rem;
+    background: #1a202c;
+    padding: 1.1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,37 +341,43 @@ section h2 {
 .chat-status {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.7rem;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     background: var(--accent-color);
     border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-color);
 }
 
 .close-btn {
     background: none;
     border: none;
     color: var(--text-secondary);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--text-color);
 }
 
 .chat-messages {
     flex: 1;
-    padding: 1rem;
+    padding: 1.2rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.9rem;
 }
 
 .message {
     max-width: 85%;
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
     font-size: 0.9rem;
 }
 
@@ -271,142 +385,84 @@ section h2 {
     background: var(--accent-color);
     color: #000;
     align-self: flex-end;
+    font-weight: 500;
 }
 
 .bot-message {
-    background: #21262d;
+    background: #1b212c;
     color: var(--text-color);
     align-self: flex-start;
     border: 1px solid var(--border-color);
 }
 
 .chat-quick-tags {
-    padding: 0.5rem;
+    padding: 0.6rem;
     display: flex;
     gap: 0.5rem;
     overflow-x: auto;
-    background: #13161a;
+    background: #0d1017;
+    border-top: 1px solid var(--border-color);
+}
+
+.chat-quick-tags::-webkit-scrollbar {
+    height: 3px;
+}
+.chat-quick-tags::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
 }
 
 .chat-quick-tags button {
-    background: #21262d;
+    background: #1b212c;
     border: 1px solid var(--border-color);
     color: var(--text-color);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
     white-space: nowrap;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-quick-tags button:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .chat-input-area {
     display: flex;
-    padding: 0.8rem;
+    padding: 0.9rem;
     border-top: 1px solid var(--border-color);
-    background: #1c2128;
+    background: #1a202c;
 }
 
 .chat-input-area input {
     flex: 1;
-    background: #0d0f12;
+    background: #0a0d14;
     border: 1px solid var(--border-color);
     color: var(--text-color);
-    padding: 0.5rem 0.8rem;
-    border-radius: 4px;
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
     outline: none;
+    font-size: 0.9rem;
+}
+
+.chat-input-area input:focus {
+    border-color: var(--accent-color);
 }
 
 .chat-input-area button {
     background: var(--accent-color);
     border: none;
     color: #000;
-    padding: 0 1rem;
-    margin-left: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-}/* Estilos para a Secção de Projetos em Destaque */
-.portfolio-section {
-    padding: 60px 20px;
-    background-color: #0d0d0d; /* Fundo escuro minimalista */
-    color: #e0e0e0;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-align: center;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #888;
-    margin-bottom: 40px;
-    font-size: 1rem;
-}
-
-.project-card {
-    background: #161616;
-    border: 1px solid #222;
-    border-radius: 12px;
-    padding: 30px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    border-color: #00ff66; /* Detalhe em tom neon/verde coerente com o teu estilo */
-}
-
-.project-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.project-info p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #b0b0b0;
-    margin-bottom: 20px;
-}
-
-.project-tags {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-}
-
-.project-tags span {
-    background: #222;
-    color: #00ff66;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #00ff66;
-    color: #000;
-    padding: 12px 24px;
+    padding: 0 1.1rem;
+    margin-left: 0.6rem;
     border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
 }
 
-.btn-primary:hover {
-    opacity: 0.9;
-    background-color: #00cc52;
+.chat-input-area button:hover {
+    background: var(--accent-hover);
 }
