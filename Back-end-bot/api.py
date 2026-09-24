@@ -27,9 +27,8 @@ embeddings = GoogleGenerativeAIEmbeddings(
 # 3. Inicialização do cliente Gemini SDK oficial
 client = genai.Client(api_key=api_key)
 
-# 2. Inicialização do Banco Vetorial (ChromaDB)
+# Inicialização do Banco Vetorial (ChromaDB)
 CHROMA_PATH = "./chroma_db"
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 if os.path.exists(CHROMA_PATH):
     vector_db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embeddings)
