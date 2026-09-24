@@ -9,16 +9,22 @@ from typing import List, Optional
 from google import genai
 from google.genai.errors import ServerError, APIError
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-# 1. Carregar chave de API (.env ou variável de ambiente)
+# 1. Carregar variáveis de ambiente primeiro
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 
 if not api_key:
     raise ValueError("GEMINI_API_KEY não foi configurada no ficheiro .env")
 
-# Inicialização do cliente Gemini SDK oficial
+# 2. Inicialização dos Embeddings do Google Gemini
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001",
+    google_api_key=api_key
+)
+
+# 3. Inicialização do cliente Gemini SDK oficial
 client = genai.Client(api_key=api_key)
 
 # 2. Inicialização do Banco Vetorial (ChromaDB)

@@ -5,8 +5,6 @@ chromadb
 langchain
 langchain-chroma
 langchain-community
-langchain-core
-langchain-huggingface
-sentence-transformers
+langchain-google-genai
 python-dotenv
 pydantic

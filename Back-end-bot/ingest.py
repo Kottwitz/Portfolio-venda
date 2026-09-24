@@ -3,7 +3,10 @@ import shutil
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from dotenv import load_dotenv
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
+load_dotenv()
 
 CHROMA_PATH = "./chroma_db"
 DOCUMENTS_PATH = "./documentos"
@@ -26,9 +29,10 @@ def recarregar_base():
 
     # 4. Gera os embeddings e salva no ChromaDB
     print("Criando novos vetores no ChromaDB...")
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    Chroma.from_documents(chunks, embeddings, persist_directory=CHROMA_PATH)
-    print("✅ Base de conhecimento atualizada com sucesso!")
+    embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001",
+    google_api_key=os.getenv("GEMINI_API_KEY")
+)
 
 if __name__ == "__main__":
     recarregar_base()
