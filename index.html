@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Kottwitz | Desenvolvedor Software & Soluções B2B</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Fixo / Navbar Persistente -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">&lt;Rafael Kottwitz /&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="header-cta">
+                <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20vi%20o%20teu%20portfólio%20e%20quero%20fazer%20um%20orçamento!" target="_blank" class="btn-nav">
+                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="badge">Desenvolvedor Full Stack & Soluções Digitais</span>
+                <h1>Transformando o seu negócio físico em uma máquina de vendas digital.</h1>
+                <p>Soluções personalizadas para comércios locais e empresas: de cardápios digitais a sistemas complexos que geram resultados.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Fazer Orçamento (WhatsApp)
+                    </a>
+                    <button class="btn-secondary" onclick="toggleChat()">
+                        <i class="fas fa-robot"></i> Falar com Assistente IA
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mim -->
+        <section id="sobre" class="sobre">
+            <h2>Sobre Mim</h2>
+            <div class="sobre-grid">
+                <div class="sobre-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Desenvolvimento Direto</h3>
+                    <p>Atendimento autônomo, focado em entregas ágeis, código limpo e sem a burocracia de grandes agências.</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Arquitetura Sólida</h3>
+                    <p>Experiência com Python, FastAPI, C#, PostgreSQL e integrações modernas com Inteligência Artificial.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Especializados -->
+        <section id="servicos" class="servicos">
+            <h2>Serviços Especializados</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Landing Pages</h3>
+                    <p>Páginas otimizadas para conversão, SEO e integração com tráfego pago ou e-mail marketing.</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-android"></i>
+                    <h3>Apps Android</h3>
+                    <p>Aplicativos focados na plataforma Android, sob medida para a necessidade do seu negócio.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-commerces & Lojas</h3>
+                    <p>Soluções de venda online com checkout simples e gestão direta de produtos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vitrine de Projetos em Destaque -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2 class="section-title">Portfólio de Soluções de Alta Performance</h2>
+                <p class="section-subtitle">Projetos reais desenvolvidos para resolver problemas práticos e acelerar conversões.</p>
+
+                <div class="project-grid-main">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <span class="project-tag-top">Gastronomia</span>
+                            <h3>Festival Sushi Experience</h3>
+                            <p>
+                                Landing Page de Alta Conversão para reservas online. Focada numa interface visualmente apelativa estruturada para guiar o utilizador à tomada de ação imediata.
+                            </p>
+                            <div class="project-tags">
+                                <span>UI/UX Design</span>
+                                <span>Frontend</span>
+                                <span>Alta Conversão</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://festivalsushi.netlify.app/" target="_blank" class="btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> Ver Projeto Live
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-info">
+                            <span class="project-tag-top">Autoatendimento</span>
+                            <h3>Cardápio Digital Inteligente</h3>
+                            <p>
+                                Solução completa de cardápio digital interativo para restaurantes e comércios locais, otimizada para agilizar pedidos e reduzir custos operacionais.
+                            </p>
+                            <div class="project-tags">
+                                <span>Full Stack</span>
+                                <span>FastAPI</span>
+                                <span>SQLite</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20quero%20conhecer%20o%20Cardápio%20Digital!" target="_blank" class="btn-primary">
+                                    <i class="fab fa-whatsapp"></i> Saber Mais
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outros Projetos / Projetos Recentes -->
+        <section class="portfolio">
+            <h2>Projetos Recentes</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-info">
+                        <h3>Assistente RAG IA</h3>
+                        <p>Bot consultivo integrado com FastAPI, ChromaDB e modelo Gemini para atendimento 24/7.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-info">
+                        <h3>Sistemas de Gestão</h3>
+                        <p>Aplicações web para controle de estoque e cadastros com modelagem relacional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Contato Final -->
+        <section id="contato" class="contato-final">
+            <div class="container text-center">
+                <h2>Pronto para Transformar o Seu Negócio? Fale com a Nossa Agência.</h2>
+                <p>Não deixe para depois. Entre em contato direto pelo WhatsApp ou tire suas dúvidas com o nosso assistente.</p>
+                <div class="hero-btns" style="margin-top: 2rem;">
+                    <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20quero%20fazer%20um%20orçamento%20pelo%20portfólio." target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Fazer Orçamento (WhatsApp)
+                    </a>
+                    <button class="btn-secondary" onclick="toggleChat()">
+                        <i class="fas fa-robot"></i> Falar com Assistente IA
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <p>© 2026 Rafael Kottwitz. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Chat Widget Integrado -->
+    <div class="chat-widget">
+        <button class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+        </button>
+
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>Assistente Virtual</strong>
+                        <small>IA de Atendimento</small>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="toggleChat()">&times;</button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Olá! Sou o assistente virtual do Rafael. Como posso te ajudar com seu projeto hoje?
+                </div>
+            </div>
+
+            <div class="chat-quick-tags">
+                <button onclick="sendQuickMessage('Quanto custa uma landing page?')">📄 Preço Landing Page</button>
+                <button onclick="sendQuickMessage('Você faz app para Android?')">📱 App Android</button>
+            </div>
+
+            <form class="chat-input-area" id="chatForm" onsubmit="handleSendMessage(event)">
+                <input type="text" id="userInput" placeholder="Digite sua mensagem..." autocomplete="off">
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
