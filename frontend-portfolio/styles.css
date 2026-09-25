@@ -1,6 +1,6 @@
 :root {
     --bg-color: #080a0f;
-    --card-bg: rgba(22, 26, 34, 0.75); /* Efeito translúcido para glassmorphism */
+    --card-bg: rgba(22, 26, 34, 0.75);
     --accent-color: #00ff66;
     --accent-hover: #00cc52;
     --text-color: #e6edf3;
@@ -83,7 +83,6 @@ body {
     justify-content: center;
     padding: 8rem 2rem 4rem;
     text-align: center;
-    /* Imagem de fundo abstrata/tecnológica de alta qualidade otimizada */
     background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
 }
 
@@ -93,7 +92,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradiente escuro para garantir legibilidade perfeita sem poluir */
     background: linear-gradient(135deg, rgba(8, 10, 15, 0.95) 0%, rgba(13, 15, 18, 0.85) 100%);
     z-index: 1;
 }
@@ -284,7 +282,26 @@ section h2 {
     border: 1px solid rgba(0, 255, 102, 0.2);
 }
 
-/* Chat Widget Modernizado */
+/* Secção Contato Final */
+.contato-final {
+    background: linear-gradient(180deg, #0c1017 0%, var(--bg-color) 100%);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.contato-final p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Chat Widget Modernizado & Otimizado para Mobile */
 .chat-widget {
     position: fixed;
     bottom: 25px;
@@ -466,27 +483,30 @@ section h2 {
 .chat-input-area button:hover {
     background: var(--accent-hover);
 }
-/* Chat Box Otimizado para Desktop e Mobile */
-.chat-box {
-    display: none;
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    width: 380px;
-    height: 500px;
-    background: #12161f;
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    flex-direction: column;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
-    overflow: hidden;
+
+/* Responsividade Mobile (Navbar e Chat) */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .btn-nav {
+        padding: 0.3rem 0.6rem;
+    }
 }
 
-.chat-box.active {
-    display: flex;
-}
-
-/* Media Query para Telemóveis (Adaptação perfeita ao teclado virtual) */
 @media (max-width: 480px) {
     .chat-box {
         position: fixed;
@@ -495,7 +515,7 @@ section h2 {
         left: 0;
         top: 0;
         width: 100% !important;
-        height: 100dvh !important; /* Ajusta-se dinamicamente quando o teclado abre */
+        height: 100dvh !important;
         border-radius: 0;
         border: none;
         z-index: 2000;
