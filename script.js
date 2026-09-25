@@ -1,6 +1,32 @@
 const API_URL = "https://portfolio-venda.onrender.com/chat";
 let chatHistory = [];
 
+// Controlo do Menu Mobile Hambúrguer
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburgerIcon = document.querySelector('#menuHamburger i');
+    
+    navLinks.classList.toggle('active');
+    
+    if (navLinks.classList.contains('active')) {
+        hamburgerIcon.classList.remove('fa-bars');
+        hamburgerIcon.classList.add('fa-times');
+    } else {
+        hamburgerIcon.classList.remove('fa-times');
+        hamburgerIcon.classList.add('fa-bars');
+    }
+}
+
+function closeMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburgerIcon = document.querySelector('#menuHamburger i');
+    
+    navLinks.classList.remove('active');
+    hamburgerIcon.classList.remove('fa-times');
+    hamburgerIcon.classList.add('fa-bars');
+}
+
+// Controlo do Chat Widget
 function toggleChat() {
     const chatBox = document.getElementById('chatBox');
     chatBox.classList.toggle('active');
