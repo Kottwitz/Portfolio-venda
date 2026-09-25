@@ -4,41 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael Kottwitz | Desenvolvedor Software & Soluções B2B</title>
+    <title>Rafael Kottwitz | Desenvolvedor Software</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Header Fixo / Navbar Persistente -->
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">&lt;Rafael Kottwitz /&gt;</div>
+            <div class="logo">&lt;RafaelKottwitz /&gt;</div>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#contato" class="btn-nav">Contato</a></li>
             </ul>
-            <div class="header-cta">
-                <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20vi%20o%20teu%20portfólio%20e%20quero%20fazer%20um%20orçamento!" target="_blank" class="btn-nav">
-                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-                </a>
-            </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero" id="inicio">
+        <!-- Hero Section com Background Imersivo -->
+        <section class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="badge">Desenvolvedor Full Stack & Soluções Digitais</span>
-                <h1>Transformando o seu negócio físico em uma máquina de vendas digital.</h1>
-                <p>Soluções personalizadas para comércios locais e empresas: de cardápios digitais a sistemas complexos que geram resultados.</p>
+                <span class="badge">Desenvolvedor Full Stack & Mobile</span>
+                <h1>Transformando ideias em software de alto impacto.</h1>
+                <p>Especialista em Landing Pages de alta conversão, Apps Android, E-commerces e Sistemas Web com bancos de dados relacionais.</p>
                 <div class="hero-btns">
-                    <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn-primary">
-                        <i class="fab fa-whatsapp"></i> Fazer Orçamento (WhatsApp)
+                    <a href="https://wa.me/5547988258610" target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Fazer Orçamento
                     </a>
                     <button class="btn-secondary" onclick="toggleChat()">
                         <i class="fas fa-robot"></i> Falar com Assistente IA
@@ -83,61 +77,44 @@
                     <h3>E-commerces & Lojas</h3>
                     <p>Soluções de venda online com checkout simples e gestão direta de produtos.</p>
                 </div>
+                <div class="card">
+                    <i class="fas fa-server"></i>
+                    <h3>Sistemas Web & APIs</h3>
+                    <p>Sistemas relacionais com bancos de dados (PostgreSQL/SQL) e automações personalizadas.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Vitrine de Projetos em Destaque -->
-        <section id="portfolio" class="portfolio-section">
+        <!-- Projetos em Destaque -->
+        <section id="projetos-destaque" class="portfolio-section">
             <div class="container">
-                <h2 class="section-title">Portfólio de Soluções de Alta Performance</h2>
-                <p class="section-subtitle">Projetos reais desenvolvidos para resolver problemas práticos e acelerar conversões.</p>
+                <h2 class="section-title">Projeto em Destaque</h2>
+                <p class="section-subtitle">Exemplo prático de desenvolvimento web focado em conversão de alta performance.</p>
 
-                <div class="project-grid-main">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <span class="project-tag-top">Gastronomia</span>
-                            <h3>Festival Sushi Experience</h3>
-                            <p>
-                                Landing Page de Alta Conversão para reservas online. Focada numa interface visualmente apelativa estruturada para guiar o utilizador à tomada de ação imediata.
-                            </p>
-                            <div class="project-tags">
-                                <span>UI/UX Design</span>
-                                <span>Frontend</span>
-                                <span>Alta Conversão</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://festivalsushi.netlify.app/" target="_blank" class="btn-primary">
-                                    <i class="fas fa-external-link-alt"></i> Ver Projeto Live
-                                </a>
-                            </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Festival Sushi Experience</h3>
+                        <p>
+                            Desenvolvimento de uma landing page comercial de alta conversão, otimizada para dispositivos móveis e carregamento instantâneo.
+                            O projeto foca-se numa interface visualmente apelativa, estruturada para guiar o utilizador até à tomada de ação.
+                        </p>
+                        <div class="project-tags">
+                            <span>UI/UX Design</span>
+                            <span>Frontend</span>
+                            <span>Alta Conversão</span>
                         </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-info">
-                            <span class="project-tag-top">Autoatendimento</span>
-                            <h3>Cardápio Digital Inteligente</h3>
-                            <p>
-                                Solução completa de cardápio digital interativo para restaurantes e comércios locais, otimizada para agilizar pedidos e reduzir custos operacionais.
-                            </p>
-                            <div class="project-tags">
-                                <span>Full Stack</span>
-                                <span>FastAPI</span>
-                                <span>SQLite</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20quero%20conhecer%20o%20Cardápio%20Digital!" target="_blank" class="btn-primary">
-                                    <i class="fab fa-whatsapp"></i> Saber Mais
-                                </a>
-                            </div>
+                        <div class="project-actions">
+                            <a href="https://festivalsushi.netlify.app/" target="_blank" class="btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto Live
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Outros Projetos / Projetos Recentes -->
-        <section class="portfolio">
+        <!-- Outros Projetos -->
+        <section id="portfolio" class="portfolio">
             <h2>Projetos Recentes</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
@@ -158,11 +135,11 @@
         <!-- Secção de Contato Final -->
         <section id="contato" class="contato-final">
             <div class="container text-center">
-                <h2>Pronto para Transformar o Seu Negócio? Fale com a Nossa Agência.</h2>
-                <p>Não deixe para depois. Entre em contato direto pelo WhatsApp ou tire suas dúvidas com o nosso assistente.</p>
+                <h2>Vamos tirar o seu projeto do papel?</h2>
+                <p>Entre em contacto diretamente pelo WhatsApp ou tire as suas dúvidas com o nosso assistente virtual inteligente.</p>
                 <div class="hero-btns" style="margin-top: 2rem;">
-                    <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20quero%20fazer%20um%20orçamento%20pelo%20portfólio." target="_blank" class="btn-primary">
-                        <i class="fab fa-whatsapp"></i> Fazer Orçamento (WhatsApp)
+                    <a href="https://wa.me/5547988258610" target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Fazer Orçamento
                     </a>
                     <button class="btn-secondary" onclick="toggleChat()">
                         <i class="fas fa-robot"></i> Falar com Assistente IA
@@ -172,12 +149,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-bottom">
-        <p>© 2026 Rafael Kottwitz. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Chat Widget Integrado -->
+    <!-- Chat Widget -->
     <div class="chat-widget">
         <button class="chat-toggle-btn" onclick="toggleChat()">
             <i class="fas fa-comments"></i>

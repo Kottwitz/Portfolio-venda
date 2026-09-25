@@ -1,0 +1,66 @@
+=== SOBRE O DESENVOLVEDOR ===
+Nome: Rafael Batista Kottwitz
+Localização: Penha, SC
+Formação: Tecnólogo em Análise e Desenvolvimento de Sistemas pela Univali
+Contacto Direto / WhatsApp: (47) 98825-8610
+E-mail: rafael.kottwitz11@gmail.com
+GitHub: github.com/Kottwitz
+LinkedIn: linkedin.com/in/rafael-kottwitz
+
+Resumo Profissional:
+Desenvolvedor Full Stack e Analista de Sistemas com sólida experiência na criação de aplicações web modernas, APIs RESTful, bancos de dados e integração de inteligência artificial. Atua como desenvolvedor freelancer oferecendo soluções com alto custo-benefício, entregas rápidas e preços competitivos.
+
+=== COMPETÊNCIAS TÉCNICAS E TECNOLOGIAS ===
+- Linguagens de Programação: Python, C#, PHP, JavaScript (ES6+), SQL, HTML5, CSS3.
+- Frameworks & Back-End: FastAPI, Django, .NET Core / ASP.NET, Laravel, Node.js (Express).
+- Front-End & Estilização: JavaScript, HTML5, CSS3, Bootstrap, Tailwind CSS.
+- Bancos de Dados & ORMs: PostgreSQL, MySQL, SQL Server, Entity Framework, SQLAlchemy.
+- Ferramentas & Práticas: APIs RESTful, Git, GitHub, Arquitetura MVC, Manutenção Preventiva/Corretiva de Sistemas, Diagnóstico de Hardware e Redes.
+
+=== TABELA DE SERVIÇOS E PREÇOS (FREELANCER) ===
+
+1. Landing Page Simples:
+- Descrição: Página única moderna, responsiva (mobile e desktop) com integração para WhatsApp e formulário de contacto.
+- Valor: R$ 350 a R$ 600.
+- Prazo: 3 a 5 dias úteis.
+
+2. Landing Page Avançada / Profissional:
+- Descrição: Design exclusivo, alta performance de carregamento, integração com e-mail marketing e otimização básica de SEO.
+- Valor: R$ 700 a R$ 1.200.
+- Prazo: 5 a 10 dias úteis.
+
+3. Sistema Web / Painel de Gestão (Dashboard):
+- Descrição: Painel administrativo para gestão de dados, produtos ou vendas, com login de utilizadores e base de dados relacional (PostgreSQL/MySQL/SQL Server) utilizando FastAPI, Django ou .NET Core.
+- Valor: R$ 1.500 a R$ 2.800.
+- Prazo: 10 a 20 dias úteis.
+
+4. Implementação de Chatbot com IA (RAG / Atendimento Automático):
+- Descrição: Assistente virtual inteligente treinado com a base de dados da empresa para atendimento automatizado a clientes no site.
+- Valor: R$ 800 a R$ 1.600.
+- Prazo: 5 a 10 dias úteis.
+
+5. Automações, Scripts e Web Scraping:
+- Descrição: Scripts em Python para extração de dados da web, automação de tarefas diárias ou integração entre APIs.
+- Valor: R$ 250 a R$ 500.
+- Prazo: 2 a 4 dias úteis.
+
+6. Manutenção, Correção de Bugs e Suporte Técnico:
+- Descrição: Correção de erros em sites e sistemas existentes (Python, PHP, C#, JS), ajustes de layout e suporte em hardware/redes.
+- Valor: R$ 80/hora ou R$ 150 por ajuste simples.
+- Prazo: 1 a 2 dias.
+
+7. Configuração de Servidor, Domínio e Deploy:
+- Descrição: Apontamento de domínio, instalação de certificado de segurança SSL e publicação de aplicações na nuvem (Render, Vercel, VPS).
+- Valor: R$ 150 a R$ 300.
+- Prazo: 1 a 2 dias.
+
+8. Aplicativo Android / App Mobile:
+- Descrição: Aplicativo mobile para Android focado em produtividade ou negócios.
+- Valor: R$ 2.000 a R$ 5.000.
+- Prazo: 15 a 30 dias úteis.
+
+=== POLÍTICA DE ATENDIMENTO E PAGAMENTO ===
+- Condições de Pagamento: 50% de entrada no início do projeto e 50% na aprovação final.
+- Meios Aceites: Pix
+- Garantia: 30 dias de suporte pós-entrega para correção de erros sem custo adicional.
+- Encaminhamento: Caso o cliente precise de um orçamento personalizado, negociação especial ou tenha dúvidas que não estejam aqui descritas, o assistente orienta a entrar em contacto direto com o Rafael pelo WhatsApp (47) 98825-8610.
