@@ -53,6 +53,10 @@ Desenvolvedor Full Stack e Analista de Sistemas com sólida experiência na cria
 - Descrição: Apontamento de domínio, instalação de certificado de segurança SSL e publicação de aplicações na nuvem (Render, Vercel, VPS).
 - Valor: R$ 150 a R$ 300.
 - Prazo: 1 a 2 dias.
+8. Aplicativo Android / App Mobile:
+- Descrição: Aplicativo mobile para Android focado em produtividade ou negócios.
+- Valor: R$ 2.000 a R$ 5.000.
+- Prazo: 15 a 30 dias úteis.
 
 === POLÍTICA DE ATENDIMENTO E PAGAMENTO ===
 - Condições de Pagamento: 50% de entrada no início do projeto e 50% na aprovação final.
