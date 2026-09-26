@@ -10,21 +10,33 @@
 </head>
 
 <body>
-    <!-- Header Fixo / Navbar Persistente -->
+    <!-- Header Fixo / Navbar Responsiva -->
     <header class="header">
         <nav class="nav-container">
             <div class="logo">&lt;Rafael Kottwitz /&gt;</div>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
+                <li><a href="#portfolio" onclick="closeMenu()">Portfólio</a></li>
+                <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+                <li class="mobile-cta">
+                    <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20vi%20o%20teu%20portfólio%20e%20quero%20fazer%20um%20orçamento!" target="_blank" class="btn-nav">
+                        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                    </a>
+                </li>
             </ul>
-            <div class="header-cta">
+
+            <div class="header-cta desktop-only">
                 <a href="https://wa.me/5547988258610?text=Olá%20Rafael,%20vi%20o%20teu%20portfólio%20e%20quero%20fazer%20um%20orçamento!" target="_blank" class="btn-nav">
                     <i class="fab fa-whatsapp"></i> Falar no WhatsApp
                 </a>
             </div>
+
+            <!-- Botão Hambúrguer para Mobile -->
+            <button class="menu-hamburger" id="menuHamburger" onclick="toggleMenu()" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
@@ -136,7 +148,7 @@
             </div>
         </section>
 
-        <!-- Outros Projetos / Projetos Recentes -->
+        <!-- Projetos Recentes -->
         <section class="portfolio">
             <h2>Projetos Recentes</h2>
             <div class="portfolio-grid">
@@ -179,7 +191,7 @@
 
     <!-- Chat Widget Integrado -->
     <div class="chat-widget">
-        <button class="chat-toggle-btn" onclick="toggleChat()">
+        <button class="chat-toggle-btn" onclick="toggleChat()" aria-label="Abrir Chat">
             <i class="fas fa-comments"></i>
         </button>
 
